@@ -14,7 +14,7 @@ class FileStorage:
             return self.__objects
         models = {}
         for key, value in self.__objects.items():
-            if cls.__name__ in key:
+            if cls == value.__class__:
                 models[key] = value
         return models
 
