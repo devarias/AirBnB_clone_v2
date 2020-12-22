@@ -13,7 +13,7 @@ def do_pack():
     """
     file = "web_static_" + datetime.now().strftime("%Y%m%d%H%M%S") + ".tgz"
     folder = "versions/"
-    local("mkdir -p" + folder)
+    local("mkdir -p " + folder)
     check = local("tar -cvzf {}{} web_static".format(folder, file))
     if check.succeeded:
         return folder + file
