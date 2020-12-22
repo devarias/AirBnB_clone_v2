@@ -9,6 +9,7 @@ from datetime import datetime
 
 env.hosts = ['34.74.218.65', '35.190.174.10']
 
+
 def do_pack():
     """The function do_pack must return the archive path
     if the archive has been correctly generated.
@@ -31,7 +32,6 @@ def do_deploy(archive_path):
     tmp = archive_path.split('.')[0]
     name = tmp.split('/')[1]
     dst = dataPath + name
-
     try:
         put(archive_path, '/tmp')
         run('mkdir -p {}'.format(dst))
