@@ -14,9 +14,8 @@
 apt-get update && apt-get -y install nginx
 mkdir -p /data/web_static/shared
 mkdir -p /data/web_static/releases/test
-touch /data/web_static/releases/test/index.html
-echo "Holberton School" | sudo tee /data/web_static/releases/test/index.html
-ls -sf /data/web_static/releases/test/ /data/web_static/current
+echo "Holberton School" > /data/web_static/releases/test/index.html
+ln -sf /data/web_static/releases/test/ /data/web_static/current
 chown -R ubuntu:ubuntu /data/
 sed -i "/^\tlocation \/ {$/ i\\\tlocation /hbnb_static {\n\t\talias /data/web_static/current/;\n\t\tautoindex off;\n}" /etc/nginx/sites-enabled/default
 sudo service nginx restart
