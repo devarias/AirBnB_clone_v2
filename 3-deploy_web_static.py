@@ -24,7 +24,7 @@ def do_pack():
 
 def do_deploy(archive_path):
     """function, using the new path of the new archive"""
-    if not path.exists(archive_path):
+    if not exists(archive_path):
         return False
 
     dataPath = '/data/web_static/releases/'
