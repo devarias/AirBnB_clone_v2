@@ -23,6 +23,7 @@ def do_pack():
         return folder + file
     return None
 
+
 def do_deploy(archive_path):
     """function, using the new path of the new archive"""
     if not exists(archive_path):
@@ -44,6 +45,7 @@ def do_deploy(archive_path):
         return True
     except:
         return False
+
 
 def deploy():
     """function to call the function do_pack and do_deploy in one call"""
