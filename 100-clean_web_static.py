@@ -17,7 +17,7 @@ def do_clean(number=0):
     else:
         number = "3"
     with lcd("versions"):
-        local("ls -1t | tail -n +{} > files.tmp".format(number))
+        local("ls -1t | tail -n +{} > files.tmp".format(str(int(number + 1)))
         local("rm -rf `cat files.tmp`")
         local("rm files.tmp")
     with cd("/data/web_static/releases/"):
