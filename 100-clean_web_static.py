@@ -20,9 +20,5 @@ def do_clean(number=0):
         local("ls -1t | grep web_static_.*\.tgz | tail -n +" +
               number + " | xargs -I {} rm -- {}")
     with cd("/data/web_static/releases/"):
-        if number == "3":
-            number = "1"
-        else:
-            number = "3"
         run("ls -1t | grep web_static_ | tail -n +" +
             number + " | xargs -I {} rm -rf -- {}")
