@@ -13,9 +13,9 @@ env.hosts = ['34.74.218.65', '35.190.174.10']
 def do_clean(number=0):
     """function to that delete out-of-date archives"""
     if int(number) < 2:
-        number = "2"
-    else:
         number = "3"
+    else:
+        number = "4"
     with lcd("versions"):
         local("ls -1t | tail -n +{} > files.tmp".format(number))
         local("rm -rf `cat files.tmp`")
