@@ -13,13 +13,12 @@ env.hosts = ['34.74.218.65', '35.190.174.10']
 def do_clean(number=0):
     """function to that delete out-of-date archives"""
     if int(number) < 2:
-        number = "3"
+        number = "1"
     else:
-        number = "4"
+        number = "3"
     with lcd("versions"):
-        local("ls -1t | tail -n +{} > files.tmp".format(number))
-        local("rm -rf `cat files.tmp`")
-        local("rm files.tmp")
+        local("ls -1t | grep web_static_.*\.tgz | tail -n +" +
+              number + " | xargs -I {} rm -- {}")
     with cd("/data/web_static/releases/"):
         if number == "3":
             number = "1"
