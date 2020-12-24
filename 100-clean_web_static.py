@@ -14,8 +14,8 @@ def do_clean(number=0):
     """function to that delete out-of-date archives"""
     with lcd("versions"):
         number = int(number)
-        if number < 2:
-            number = 2
+        if number == 0 or number == 1:
+            number = 1
         n = str(number + 2)
         local("mkdir test")
         local("ls -1t | grep -v 'test' | tail -n +{} > files.tmp".format(n))
