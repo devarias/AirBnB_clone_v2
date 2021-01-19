@@ -9,7 +9,7 @@ from models.place import Place
 from models.amenity import Amenity
 from models.review import Review
 from models.user import User
-from os import getenv
+from os import close, getenv
 
 classes = {
     'State': State,
@@ -77,3 +77,7 @@ class DBStorage:
         Session_ = sessionmaker(bind=self.__engine, expire_on_commit=False)
         Session = scoped_session(Session_)
         self.__session = Session()
+
+    def close(self):
+        """close on the class Session"""
+        self.__session.close()
