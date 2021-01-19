@@ -16,10 +16,12 @@ def home():
     """Displays 'Hello HBNB!'"""
     return "Hello HBNB!"
 
+
 @app.route("/hbnb", strict_slashes=False)
 def hbnb():
     """Displays 'HBNB'"""
     return "HBNB"
+
 
 @app.route("/c/<name>", strict_slashes=False)
 def c(name):
