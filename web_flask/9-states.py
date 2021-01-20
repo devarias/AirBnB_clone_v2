@@ -16,8 +16,6 @@ app = Flask(__name__)
 def states_by_id(id):
     """'/states/<id>': 'Display a HTML page: (inside the tag BODY)'"""
     states = storage.all("State")
-    if id:
-        id = "State." + id
     return render_template('9-states.html', states=states, id=id)
 
 
