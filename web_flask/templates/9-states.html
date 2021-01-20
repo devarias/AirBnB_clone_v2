@@ -11,7 +11,7 @@
             <LI>{{ state.id }}: <B>{{ state.name }}</B></LI>
             {% endfor %}
         </UL>
-        {% if id in states %}
+        {% elif id in states %}
         <H1>State: {{ states[id].name }}</H1>
             <H3>Cities:</H3>
                 <UL>
