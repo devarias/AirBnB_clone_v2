@@ -11,11 +11,13 @@ from models.state import State
 app = Flask(__name__)
 
 
-@app.route("/states/", strict_slashes=False)
+@app.route("/states", strict_slashes=False)
 @app.route("/states/<id>", strict_slashes=False)
-def states_by_id(id):
+def states_by_id(id=None):
     """'/states/<id>': 'Display a HTML page: (inside the tag BODY)'"""
     states = storage.all("State")
+    if id:
+        id = "State." + id
     return render_template('9-states.html', states=states, id=id)
 
 
