@@ -1,18 +1,9 @@
 header {
-	background-color: white;
-	height: 70px;
-	width: 100%;
-	
-	border-bottom: 1px solid #CCCCCC;
-}
-
-#header_logo {
-	height: 100%;
-	width: 142px;
-
-	background-image: url("../images/logo.png");
-	background-repeat: no-repeat;
-	background-position: center;
-
-	margin-left: 20px;
-}
+    background-color: white;
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid #CCCCCC; }
+.logo {
+    background: url("https://raw.githubusercontent.com/devarias/AirBnB_clone/main/web_static/images/logo.png") no-repeat;
+    margin-left: 20px;
+    height: 100%; }
