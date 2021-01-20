@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 @app.route("/states/", strict_slashes=False)
 @app.route("/states/<id>", strict_slashes=False)
-def cities_by_states_list(id):
+def states_by_id(id):
     """'/states/<id>': 'Display a HTML page: (inside the tag BODY)'"""
     states = storage.all("State")
     if id:
