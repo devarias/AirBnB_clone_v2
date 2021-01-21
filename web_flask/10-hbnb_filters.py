@@ -15,7 +15,7 @@ def hbnb_filters():
     """'/hbnb_filters': 'Display a HTML page: (inside the tag BODY)'"""
     states = storage.all("State")
     am = storage.all("Amenity")
-    return render_template('10-bnb_filters.html', states=states, amenities=am)
+    return render_template('10-hbnb_filters.html', states=states, amenities=am)
 
 
 @app.teardown_appcontext
