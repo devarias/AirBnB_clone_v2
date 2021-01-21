@@ -50,7 +50,7 @@
         </section>
         <section class="places">
             <h1>Places</h1>
-            {% for place, user in info | sort(attribute="name") %}
+            {% for place in places.values() | sort(attribute="name") %}
                 <article>
                     <h2>{{ place.name }}</h2>
                     <div class="price_by_night"><p>${{ place.price_by_night }}</p></div>
@@ -59,8 +59,8 @@
                         <div class="number_rooms">{{ place.number_rooms }} Bedroom</div>
                         <div class="number_bathrooms">{{ place.number_bathrooms }} Bathroom</div>
                     </div>
-                    <div class="user"><b>Owner</b>: {{ user.first_name }} {{ user.last_name }}</div>
-                    <div class="description">{{ place.description }}</div>
+                    <div class="user"><b>Owner</b>: {{ place.user.first_name }} {{ place.user.last_name }}</div>
+                    <div class="description">{% autoescape false %}{{ place.description | replace(": <B", "") | replace(". <B", "") }}{% endautoescape %}</div>
                 </article>
                 {% endfor %}
         </section>
