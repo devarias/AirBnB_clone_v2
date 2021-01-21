@@ -52,8 +52,10 @@
             <h1>Places</h1>
             {% for place in places.values() | sort(attribute="name") %}
                 <article>
+                    <div class="h2_box">
                     <h2>{{ place.name }}</h2>
                     <div class="price_by_night"><p>${{ place.price_by_night }}</p></div>
+                    </div>
                     <div class="information">
                         <div class="max_guest">{{ place.max_guest }} Guests</div>
                         <div class="number_rooms">{{ place.number_rooms }} Bedroom</div>
